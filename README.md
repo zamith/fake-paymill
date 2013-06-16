@@ -1,12 +1,12 @@
-# Fake::Paymill
+# FakePaymill
 
-TODO: Write a gem description
+A Paymill fake so that you can avoid hitting Paymill's servers in tests
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'fake-paymill'
+    gem 'fake_paymill'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install fake-paymill
+    $ gem install fake_paymill
 
 ## Usage
 

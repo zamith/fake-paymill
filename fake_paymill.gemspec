@@ -1,13 +1,13 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fake/paymill/version'
+require 'fake_paymill/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "fake-paymill"
-  spec.version       = Fake::Paymill::VERSION
+  spec.name          = "fake_paymill"
+  spec.version       = FakePaymill::VERSION
   spec.authors       = ["Zamith"]
-  spec.email         = ["luis@zamith.pt"]
+  spec.email         = ["zamith.28@gmail.com"]
   spec.description   = %q{A Paymill fake so that you can avoid hitting Paymill's servers in tests}
   spec.summary       = %q{A Paymill fake so that you can avoid hitting Paymill's servers in tests}
   spec.homepage      = ""
