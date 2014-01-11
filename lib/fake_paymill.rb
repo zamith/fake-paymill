@@ -2,7 +2,11 @@ require 'fileutils'
 require 'logger'
 
 require 'fake_paymill/memory'
+
 require 'fake_paymill/valid_credit_cards'
+require 'fake_paymill/server'
+require 'fake_paymill/helpers'
+require 'fake_paymill/sinatra_app'
 require 'fake_paymill/version'
 
 module FakePaymill
@@ -10,6 +14,7 @@ module FakePaymill
     reset_log!
     self.logger = Logger.new(log_file_path)
     self.memory = Memory.new
+    boot_server
   end
 
   def self.clear!
@@ -23,6 +28,10 @@ module FakePaymill
   def self.reset_log!
     FileUtils.mkdir_p(File.dirname(log_file_path))
     File.new(log_file_path, 'w').close
+  end
+
+  def self.boot_server
+    Server.new.boot
   end
 
   def self.logger
