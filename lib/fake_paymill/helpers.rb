@@ -1,6 +1,5 @@
 require 'digest/md5'
-require 'active_support'
-require 'active_support/core_ext'
+require 'active_support/gzip'
 
 module FakePaymill
   module Helpers
