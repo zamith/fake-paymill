@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'fake_paymill'
 
 describe FakePaymill do
   it 'creates a log file' do
