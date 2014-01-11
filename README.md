@@ -1,4 +1,5 @@
-# FakePaymill
+# FakePaymill  
+[![Build Status](https://travis-ci.org/zamith/fake-paymill.png?branch=master)](https://travis-ci.org/zamith/fake-paymill)
 
 A Paymill fake so that you can avoid hitting Paymill's servers in tests
 
