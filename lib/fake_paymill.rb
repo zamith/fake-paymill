@@ -1,5 +1,6 @@
 require 'fileutils'
 require 'logger'
+require 'paymill'
 
 require 'fake_paymill/memory'
 
@@ -15,6 +16,7 @@ module FakePaymill
     self.logger = Logger.new(log_file_path)
     self.memory = Memory.new
     boot_server
+    set_configuration
   end
 
   def self.clear!
@@ -32,6 +34,12 @@ module FakePaymill
 
   def self.boot_server
     Server.new.boot
+  end
+
+  def self.set_configuration
+    Paymill::Configuration.api_base = '0.0.0.0'
+    Paymill::Configuration.api_port = ENV['GATEWAY_PORT']
+    Paymill::Configuration.development = true
   end
 
   def self.logger
