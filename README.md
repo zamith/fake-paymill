@@ -1,4 +1,4 @@
-# FakePaymill  
+# FakePaymill
 [![Build Status](https://travis-ci.org/zamith/fake-paymill.png?branch=master)](https://travis-ci.org/zamith/fake-paymill)
 
 A Paymill fake so that you can avoid hitting Paymill's servers in tests
@@ -7,7 +7,7 @@ A Paymill fake so that you can avoid hitting Paymill's servers in tests
 
 Add this line to your application's Gemfile:
 
-    gem 'fake_paymill'
+    gem 'fake_paymill', require: false, group: :test
 
 And then execute:
 
@@ -19,7 +19,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
+Just require the library and you're good to go:
+
+    require 'fake_paymill'
+
+`FakePaymill.clear!` will clear all data, which you almost certainly want to do
+before each test.
+
+Full example:
+
+    # spec/spec_helper.rb
+    require 'fake_paymill'
+
+    RSpec.configure do |c|
+      c.before do
+        FakePaymill.clear!
+      end
+    end
+
+If you're using Cucumber, add this too:
+
+    # features/support/env.rb
+    require 'fake_paymill'
+
+    Before do
+      FakePaymill.clear!
+    end
 
 ## Contributing
 
