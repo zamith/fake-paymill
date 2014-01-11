@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activesupport'
   spec.add_dependency 'capybara'
+  spec.add_dependency 'paymill'
   spec.add_dependency 'sinatra'
   spec.add_dependency 'thin'
 
