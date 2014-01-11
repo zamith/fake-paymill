@@ -30,6 +30,26 @@ describe FakePaymill do
     end
   end
 
+  context 'VALID_CREDIT_CARDS' do
+    it 'includes valid regular credit cards for paymill test mode' do
+      valid_credit_cards = %w(
+        4111111111111111 5500000000000004
+        340000000000009 3530111333300000
+        6759000000000000 4973010000000004
+        30000000000004 6011111111111117
+        6240008631401148
+      )
+      expect(FakePaymill::VALID_CREDIT_CARDS.sort).to eq valid_credit_cards.sort
+    end
+
+    it 'includes valid 3-D Secure credit cards for paymill test mode' do
+      valid_credit_cards_3dsecure = %w(
+        4012888888881881 5169147129584558
+      )
+      expect(FakePaymill::VALID_CREDIT_CARDS_3DSECURE.sort).to eq valid_credit_cards_3dsecure.sort
+    end
+  end
+
   def write_to_log
     FakePaymill.logger.info("Boom!")
   end

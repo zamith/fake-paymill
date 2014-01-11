@@ -1,7 +1,8 @@
 require 'fileutils'
 require 'logger'
 
-require "fake_paymill/version"
+require 'fake_paymill/valid_credit_cards'
+require 'fake_paymill/version'
 
 module FakePaymill
   def self.start!
