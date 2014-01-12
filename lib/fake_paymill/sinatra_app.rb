@@ -10,7 +10,7 @@ module FakePaymill
     include Helpers
 
     # Paymill::Client.all
-    get "/#{Paymill::Configuration.api_version}/clients/" do
+    get "/#{Paymill.api_version}/clients/" do
       gzipped_response(200, {
         "data" => [{
           "id" => "dummy_client",

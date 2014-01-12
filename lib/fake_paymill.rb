@@ -37,9 +37,9 @@ module FakePaymill
   end
 
   def self.set_configuration
-    Paymill::Configuration.api_base = '0.0.0.0'
-    Paymill::Configuration.api_port = ENV['GATEWAY_PORT']
-    Paymill::Configuration.development = true
+    Paymill.api_base = '0.0.0.0'
+    Paymill.api_port = ENV['GATEWAY_PORT']
+    Paymill.development = true
   end
 
   def self.logger
